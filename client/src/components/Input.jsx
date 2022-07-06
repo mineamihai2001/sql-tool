@@ -6,8 +6,15 @@ export default class Input extends React.Component {
   }
 
   handleUpload(e) {
-    console.log('uploaded');
     console.log(e.target.files[0]);
+    fetch('http://localhost:8000/')
+        .then(res=>res.json())
+        .then((result) => {
+            console.log(result);
+        },
+        (error) => {
+            console.log(error);
+        })
   }
 
   render() {
